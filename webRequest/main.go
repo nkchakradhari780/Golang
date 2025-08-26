@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
-	"io/ioutil"
 )
-
 
 func main() {
 	fmt.Println("Web Request")
@@ -15,14 +14,13 @@ func main() {
 		return
 	}
 	defer res.Body.Close()
-	fmt.Printf("Type of response: %T\n",res)
+	fmt.Printf("Type of response: %T\n", res)
 	// fmt.Println("Response: ",res)
 
-	data,err := ioutil.ReadAll(res.Body)
+	data, err := io.ReadAll(res.Body)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
 	fmt.Println("Response:", string(data))
 }
- 

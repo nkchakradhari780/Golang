@@ -149,8 +149,8 @@ func performDeleteRequest() {
 
 func main() {
 	fmt.Println("Learning CRUD....")
-	// performGetRequest()
-	// performPostRequest()
-	// performPutRequest()
+	performGetRequest()
+	performPostRequest()
+	performPutRequest()
 	performDeleteRequest()
 }
